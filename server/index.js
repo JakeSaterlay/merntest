@@ -12,6 +12,7 @@ app.use(cors());
 app.use("/user", userRoute);
 app.use("/team", teamRoute);
 
+//hello
 mongoose.connect(
 	"mongodb+srv://user123:Password123Tech@merntest.mlyjcof.mongodb.net/merntutorial?retryWrites=true&w=majority"
 );
