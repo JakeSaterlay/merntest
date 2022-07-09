@@ -1,3 +1,5 @@
+const { mongodbusername, mongodbpassword } = require("./config.json");
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -14,7 +16,7 @@ app.use("/team", teamRoute);
 
 //hello
 mongoose.connect(
-	"mongodb+srv://user123:Password123Tech@merntest.mlyjcof.mongodb.net/merntutorial?retryWrites=true&w=majority"
+	`mongodb+srv://${mongodbusername}:${mongodbpassword}@merntest.mlyjcof.mongodb.net/merntutorial?retryWrites=true&w=majority`
 );
 
 app.listen(3001, () => {
