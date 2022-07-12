@@ -89,4 +89,21 @@ router.delete("/deleteTeamByName/:name", (req, res) => {
 	// );
 });
 
+// Update Team
+router.put("/updateTeamById/:id", (req, res) => {
+	TeamModel.findByIdAndUpdate(
+		req.params.id,
+		{
+			$set: req.body,
+		},
+		(error, data) => {
+			if (error) {
+				console.log(error);
+			} else {
+				res.json(data);
+				console.log("Team updated successfully !");
+			}
+		}
+	);
+});
 module.exports = router;

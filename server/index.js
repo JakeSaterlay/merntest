@@ -1,5 +1,4 @@
 const { mongodbusername, mongodbpassword } = require("./config.json");
-
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
