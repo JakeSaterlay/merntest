@@ -2,7 +2,7 @@
 This project is a basic example of the MERN stack
 
 # Config
-This project requires a `config.json` file in the root pf the server folder.
+This project requires a `config.json` file in the root of the server folder.
 
 `{
 	"mongodbusername": "Your Mongo Db Username Here",
