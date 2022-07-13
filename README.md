@@ -1,4 +1,4 @@
-# merntest
+# Mern Example Project
 This project is a basic example of the MERN stack
 
 # Config
