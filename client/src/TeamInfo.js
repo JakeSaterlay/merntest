@@ -12,7 +12,6 @@ function TeamInfo() {
 	useEffect(() => {
 		Axios.get(`http://localhost:3001/team/getTeam/${params.id}`).then(
 			(response) => {
-				console.log("YEP");
 				setTeam(response.data);
 			}
 		);
@@ -20,8 +19,13 @@ function TeamInfo() {
 
 	const updateDescription = () => {
 		Axios.put(`http://localhost:3001/team/updateTeamById/${params.id}`, {
-			description: description,
+			description: team.description,
 		}).then((response) => {});
+	};
+
+	const getValue = (e) => {
+		const { name, value } = e.target;
+		setTeam({ ...team, [name]: value });
 	};
 
 	return (
@@ -33,10 +37,10 @@ function TeamInfo() {
 				Description:
 				<input
 					type="text"
+					value={team.description || ""}
 					placeholder="Description"
-					onChange={(event) => {
-						setDesctiption(event.target.value);
-					}}
+					name="description"
+					onChange={getValue}
 				/>
 			</div>
 			<button onClick={updateDescription}>Update Team</button>
